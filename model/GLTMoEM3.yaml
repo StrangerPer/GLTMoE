@@ -1,0 +1,305 @@
+METRLA:
+  num_nodes: 207
+  in_steps: 12
+  out_steps: 12
+
+  train_size: 0.7
+  val_size: 0.1
+
+  time_of_day: True
+  day_of_week: True
+
+  lr: 0.002
+  weight_decay: 0.0001
+  milestones: [25, 50, 75, 100, 125, 150]
+  lr_decay_rate: 0.5
+  batch_size: 64
+  max_epochs: 300
+  early_stop: 20
+  use_cl: False
+  cl_step_size: 2500
+  #clip_grad: 5
+
+  model_args:
+    num_nodes: 207
+    num_group: 5
+    input_len: 12
+    input_dim: 3
+    input_embedding_dim: 24
+    output_len: 12
+    num_layer: 3
+    if_node: True
+    node_dim: 24
+    if_T_i_D: True
+    if_D_i_W: True
+    temp_dim_tid: 24
+    temp_dim_diw: 24
+    time_of_day_size: 288
+    day_of_week_size: 7
+
+PEMSBAY:
+  num_nodes: 325
+  in_steps: 12
+  out_steps: 12
+
+  train_size: 0.7
+  val_size: 0.1
+
+  time_of_day: True
+  day_of_week: True
+
+  lr: 0.001
+  weight_decay: 0.0001
+  milestones: [10, 30]
+  lr_decay_rate: 0.1
+  batch_size: 16
+  max_epochs: 300
+  early_stop: 20
+  use_cl: False
+
+  model_args:
+    num_nodes: 325
+    in_steps: 12
+    out_steps: 12
+    steps_per_day: 288
+    input_dim: 3
+    output_dim: 1
+    input_embedding_dim: 24
+    tod_embedding_dim: 24
+    dow_embedding_dim: 24
+    spatial_embedding_dim: 0
+    adaptive_embedding_dim: 80
+    feed_forward_dim: 256
+    num_heads: 6
+    num_layers: 3
+    dropout: 0.1
+
+PEMS04:
+  num_nodes: 307
+  in_steps: 12
+  out_steps: 12
+
+  train_size: 0.6
+  val_size: 0.2
+
+  time_of_day: True
+  day_of_week: True
+
+  lr: 0.002
+  weight_decay: 0.0001
+  milestones: [25, 50, 75, 100, 125, 150]
+  lr_decay_rate: 0.5
+  batch_size: 64    # 原始是64
+  max_epochs: 300
+  early_stop: 20
+  use_cl: False
+  cl_step_size: 2500
+
+  model_args:
+    num_nodes: 307
+    num_group: 30    # 新的模型是30， M3O是10
+    input_len: 12
+    input_dim: 3
+    input_embedding_dim: 32
+    output_len: 12
+    num_layer: 2    # M3O是3这里
+    if_node: True
+    node_dim: 32
+    if_T_i_D: True
+    if_D_i_W: True
+    temp_dim_tid: 32
+    temp_dim_diw: 32
+    time_of_day_size: 288
+    day_of_week_size: 7
+
+PEMS07:
+  num_nodes: 883
+  in_steps: 12
+  out_steps: 12
+
+  train_size: 0.6
+  val_size: 0.2
+
+  time_of_day: True
+  day_of_week: True
+
+  lr: 0.002
+  weight_decay: 0.0001
+  milestones: [25, 50, 75, 100, 125, 150]
+  lr_decay_rate: 0.5
+  batch_size: 64
+  max_epochs: 300
+  early_stop: 20
+  use_cl: False
+  cl_step_size: 2500
+
+  model_args:
+    num_nodes: 883
+    num_group: 40    # 新的是40，M3O是10
+    input_len: 12
+    input_dim: 3
+    input_embedding_dim: 32
+    output_len: 12
+    num_layer: 3
+    if_node: True
+    node_dim: 32
+    if_T_i_D: True
+    if_D_i_W: True
+    temp_dim_tid: 32
+    temp_dim_diw: 32
+    time_of_day_size: 288
+    day_of_week_size: 7
+
+PEMS08:
+  num_nodes: 170
+  in_steps: 12
+  out_steps: 12
+
+  train_size: 0.6
+  val_size: 0.2
+
+  time_of_day: True
+  day_of_week: True
+
+  lr: 0.002
+  weight_decay: 0.0001
+  milestones: [25, 50, 75, 100, 125, 150]
+  lr_decay_rate: 0.5
+  batch_size: 64
+  max_epochs: 300
+  early_stop: 20
+  use_cl: False
+  cl_step_size: 2500
+
+  model_args:
+    num_nodes: 170
+    num_group: 20      # M3O是10，新的是20
+    input_len: 12
+    input_dim: 3
+    input_embedding_dim: 32
+    output_len: 12
+    num_layer: 2
+    if_node: True
+    node_dim: 32
+    if_T_i_D: True
+    if_D_i_W: True
+    temp_dim_tid: 32
+    temp_dim_diw: 32
+    time_of_day_size: 288
+    day_of_week_size: 7
+
+# This is abandoned, needs further tuning if you want to run
+PEMS03:
+  num_nodes: 358
+  in_steps: 12
+  out_steps: 12
+
+  train_size: 0.6
+  val_size: 0.2
+
+  time_of_day: True
+  day_of_week: True
+
+  lr: 0.002
+  weight_decay: 0.0001
+  milestones: [25, 50, 75, 100, 125, 150]
+  lr_decay_rate: 0.5
+  batch_size: 64
+  max_epochs: 300
+  early_stop: 20
+  use_cl: False
+  cl_step_size: 2500
+
+  model_args:
+    num_nodes: 358
+    num_group: 10    # 新的是20，M3O是10
+    input_len: 12
+    input_dim: 3
+    input_embedding_dim: 32
+    output_len: 12
+    num_layer: 2
+    if_node: True
+    node_dim: 32
+    if_T_i_D: True
+    if_D_i_W: True
+    temp_dim_tid: 32
+    temp_dim_diw: 32
+    time_of_day_size: 288
+    day_of_week_size: 7
+    
+
+PEMSD7M:
+  num_nodes: 228
+  in_steps: 12
+  out_steps: 12
+
+  train_size: 0.6
+  val_size: 0.2
+
+  time_of_day: True
+  day_of_week: True
+
+  lr: 0.002
+  weight_decay: 0.0001
+  milestones: [25, 50, 75, 100, 125, 150]
+  lr_decay_rate: 0.5
+  batch_size: 64
+  max_epochs: 300
+  early_stop: 20
+  use_cl: False
+  cl_step_size: 2500
+
+  model_args:
+    num_nodes: 228
+    num_group: 5    # 新的是5，M3O是10   24+5效果很好
+    input_len: 12
+    input_dim: 3
+    input_embedding_dim: 24
+    output_len: 12
+    num_layer: 3
+    if_node: True
+    node_dim: 24
+    if_T_i_D: True
+    if_D_i_W: True
+    temp_dim_tid: 24
+    temp_dim_diw: 24
+    time_of_day_size: 288
+    day_of_week_size: 7
+    
+SD:
+  num_nodes: 716
+  in_steps: 12
+  out_steps: 12
+
+  train_size: 0.6
+  val_size: 0.2
+
+  time_of_day: True
+  day_of_week: True
+
+  lr: 0.002
+  weight_decay: 0.0001
+  milestones: [25, 50, 75, 100, 125, 150]
+  lr_decay_rate: 0.5
+  batch_size: 64
+  max_epochs: 300
+  early_stop: 20
+  use_cl: False
+  cl_step_size: 2500
+
+  model_args:
+    num_nodes: 716
+    num_group: 80    # SD目前是50+32效果好,取50+32+3
+    input_len: 12
+    input_dim: 3
+    input_embedding_dim: 24  # M3是32，自己的是24
+    output_len: 12
+    num_layer: 2
+    if_node: True
+    node_dim: 24
+    if_T_i_D: True
+    if_D_i_W: True
+    temp_dim_tid: 24
+    temp_dim_diw: 24
+    time_of_day_size: 288
+    day_of_week_size: 7
